@@ -1,0 +1,40 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  File name: Program3.c
+//  Description: Used to print the numbers from 5 to 1.
+//  Author: Parimal Kelkar
+//  Date: 10/05/2025
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Name: Display()
+//  Description: Used to dispaly the numbers from 5 to 1.
+//  Input: void
+//  Output: void
+//  Author: Parimal Kelkar
+//  Date: 10/05/2025
+//
+////////////////////////////////////////////////////////////////////////////////
+void Display()
+{
+    int iCnt = 0;
+
+    iCnt = 5;
+
+    while(iCnt >= 1)
+    {
+        printf("%d\n", iCnt);
+        iCnt--;
+    }
+}
+
+int main()
+{
+    Display();
+
+    return 0;
+}

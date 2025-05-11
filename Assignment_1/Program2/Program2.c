@@ -1,0 +1,37 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  File name: Program2.c
+//  Description: Used to print the word "Marvellous" for 5 times.
+//  Author: Parimal Kelkar
+//  Date: 10/05/2025
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Name: Display()
+//  Description: Displays the word "Marvellous" for 5 times.
+//  Input: void
+//  Output: void
+//  Author: Parimal Kelkar
+//  Date: 10/05/2025
+//
+////////////////////////////////////////////////////////////////////////////////
+void Display()
+{
+    int iCnt = 0;
+
+    for(iCnt = 1; iCnt <= 5; iCnt++)
+    {
+        printf("Marvellous\n");
+    }
+}
+
+int main()
+{
+    Display();
+
+    return 0;
+}
