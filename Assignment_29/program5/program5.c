@@ -28,7 +28,7 @@
 
 void DisplayN(char FName[], int iSize)
 {
-    int fd = 0, iRes = 0, iCnt = 0, iFileSize = 0;
+    int fd = 0, iRes = 0, iCnt = 0;
     char Buffer[BUFFER_SIZE] = {'\0'};
 
     // Filter
@@ -46,13 +46,11 @@ void DisplayN(char FName[], int iSize)
         return;
     }
 
-    while(((iRes = read(fd, Buffer, BUFFER_SIZE)) != 0) && (iSize >= 0))
+    while(((iRes = read(fd, Buffer, BUFFER_SIZE)) != 0))
     {
-        while((Buffer[iCnt] != '\0') && (iSize != 0))
+        for(iCnt = 0; (iCnt < iRes) && (iSize != 0); iCnt++, iSize--)
         {
             printf("%c", Buffer[iCnt]);
-            iSize--;
-            iCnt++;
         }
 
         memset(Buffer, '\0', BUFFER_SIZE);
