@@ -4,7 +4,7 @@
 //  Description: Used to accept a number and range of positions from user and
 //               toggle all the bits from that range.
 //  Author: Parimal Kelkar
-//  Date: 18/06/2025
+//  Date: 21/06/2025
 //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -19,7 +19,7 @@
 //  Input: unsigned int, int, int
 //  Output: unsigned int
 //  Author: Parimal Kelkar
-//  Date: 18/06/2025
+//  Date: 21/06/2025
 //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -27,7 +27,7 @@ typedef unsigned int UINT;
 
 UINT ToggleBitRange(UINT iNo, int iStart, int iEnd)
 {
-    UINT iMask = 1, iMask1 = 1, iRes = 0;
+    UINT iMask = 1;
     int iCnt = 0;
 
     // Filter
@@ -37,16 +37,13 @@ UINT ToggleBitRange(UINT iNo, int iStart, int iEnd)
     }
 
     iMask = iMask << (iStart - 1);
-    iMask1 = iMask1 << (iStart - 1);
 
-    for(iCnt = iStart; iCnt <= iEnd; iCnt++, iMask1 = iMask1 << 1)
+    for(iCnt = iStart; iCnt <= iEnd; iCnt++, iMask = iMask << 1)
     {
-        iMask = iMask | iMask1;
+        iNo = iNo ^ iMask;
     }
 
-    iRes = iNo ^ iMask;
-
-    return iRes;
+    return iNo;
 }
 
 int main()
