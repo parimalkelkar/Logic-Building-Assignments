@@ -65,7 +65,7 @@ int SecMaximum(PNODE First)
 {
     int iMax = 0;
     int iSecMax = 0;
-    bool bSame = false;
+    bool bSame = true;
 
     if(First == NULL)
     {
@@ -89,13 +89,10 @@ int SecMaximum(PNODE First)
             iMax = First -> Data;
             bSame = false;
         }
-        else if(((First -> Data) != iMax) && (First -> Data > iSecMax))
+        else if(((First -> Data) != iMax) && (First -> Data >= iSecMax))
         {
             iSecMax = First-> Data;
-        }
-        else if((First -> Data) == iMax)
-        {
-            bSame = true;
+            bSame = false;
         }
     
         First = First -> Next;
