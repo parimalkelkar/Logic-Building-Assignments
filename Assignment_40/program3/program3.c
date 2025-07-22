@@ -1,0 +1,41 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  File name: Program3.c
+//  Description: Used to print below pattern recursively.
+//  Output: 5 4 3 2 1
+//  Author: Parimal Kelkar
+//  Date: 21/07/2025
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Name: Display()
+//  Description: Displays a pattern recursively.
+//  Input: void
+//  Output: void
+//  Author: Parimal Kelkar
+//  Date: 21/07/2025
+//
+////////////////////////////////////////////////////////////////////////////////
+
+void Display()
+{
+    static int i = 5;
+
+    if(i > 0)
+    {
+        printf("%d\t", i);
+        i--;
+        Display();
+    }
+}
+
+int main()
+{
+    Display();
+
+    return 0;
+}
